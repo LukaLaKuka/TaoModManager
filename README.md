@@ -1,7 +1,9 @@
-# Tauri + SvelteKit + TypeScript
+# Tao Mod Manager
 
-This template should help get you started developing with Tauri, SvelteKit and TypeScript in Vite.
+<div align='center'>
 
-## Recommended IDE Setup
+![logo](./src-tauri/icons/Square310x310Logo.png)
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
+</div>
+
+Desktop app for manage models with [GI-Model-Importer](https://github.com/SilentNightSound/GI-Model-Importer) easily.
