@@ -21,7 +21,8 @@
       {
         "title": "Tao Mod Manager",
         "width": 800,
-        "height": 600
+        "height": 600,
+        "minWidth": 505.0
       }
     ],
     "security": {
