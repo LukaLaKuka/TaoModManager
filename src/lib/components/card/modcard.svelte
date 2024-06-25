@@ -14,9 +14,9 @@
     <span class=" text-drown-gray text-xl font-yeon mb-3">{realModName}</span>
     <!-- Open File System Window -->
     <div class="flex justify-between">
-        <button class=" text-light-blue font-abz underline"
+        <button class=" text-light-blue font-abz hover:underline"
             >Change name...</button
         >
-        <button class=" text-primary font-abz underline">Delete</button>
+        <button class=" text-primary font-abz hover:underline">Delete</button>
     </div>
 </div>

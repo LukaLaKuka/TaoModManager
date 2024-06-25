@@ -12,9 +12,10 @@ export default {
       'gray': '#20242B', // Gris (fondo tarjta)
       'light-blue': '#8790A0', // Azulado extraño
       'drown-gray': '#8B8B8B', // Gris apagado
+      'transparent': 'transparent',
     },
     borderRadius: {
-      'card': '1.875rem',
+      'input': '0.25rem',
       'button': '0.625rem',
     },
     extend: {
