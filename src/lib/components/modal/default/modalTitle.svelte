@@ -26,7 +26,7 @@
         : 'hidden'}"
 >
     <div class=" bg-dark rounded-button border border-gray flex flex-col z-20">
-        <div class="h-full flex flex-col justify-center items-center min-w-96">
+        <div class="h-full flex flex-col justify-center items-center min-w-96 max-h-96">
             <div class="flex p-5 border-b border-light w-full justify-between items-center">
                 <span class="text-light text-2xl font-abz">{title}</span>
                 <button
@@ -49,7 +49,7 @@
                     >
                 </button>
             </div>
-            <div class="{modalBodyClassname} w-full">
+            <div class="{modalBodyClassname} w-full overflow-y-scroll">
                 <slot/>
             </div>
         </div>

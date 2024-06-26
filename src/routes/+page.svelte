@@ -8,7 +8,7 @@
     let mods = Array(10);
 </script>
 
-<main class="px-6 py-5">
+<main class="px-6 py-5 overflow-y-scroll">
     <div class="flex justify-between text-light-blue mb-8">
         <Import />
         <SettingsModal genshinPath="C:/Program_x86/App/Genshin/Executable/Path"/>
