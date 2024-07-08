@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'ABeeZee';
+    src: url('./assets/fonts/ABeeZee-Italic.ttf');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ABeeZee';
+    src: url('./assets/fonts/ABeeZee-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Yeon Sung';
+    src: url("./assets/fonts/YeonSung-Regular.ttf") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #0d1117;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #20242B;
+    transition: all 1s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #bf0020;
+}
