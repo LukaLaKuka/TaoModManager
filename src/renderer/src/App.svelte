@@ -22,7 +22,7 @@
         <Modcard
           modName="Hu Tao Programa"
           active={index % 2 == 0 ? true : false}
-          realModName={`my_real_mod_name_${index}`}
+          realModName={`my_real_mod_name_${mod ?? index}`}
         />
       {/each}
     </div>
