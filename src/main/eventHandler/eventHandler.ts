@@ -11,7 +11,7 @@ export default function handleEvent() {
         return __dirname;
     });
     
-    ipcMain.handle('descompress', async (e, args) => {
+    ipcMain.handle('descompress', async (_, args) => {
         descompress(args);
     });
 }
