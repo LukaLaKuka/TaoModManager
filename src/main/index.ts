@@ -1,14 +1,17 @@
 import { app, shell, BrowserWindow } from 'electron'
-import { join } from 'path'
+import path, { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import handleEvent from './eventHandler/eventHandler'
+import { setupProject } from './app/setup/setupDirs'
+import { findFile } from './app/modules/fs/findFile'
 
 function createWindow(): void {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 900,
     height: 670,
+    minWidth: 505,
     show: false,
     autoHideMenuBar: true,
     icon,
@@ -18,8 +21,9 @@ function createWindow(): void {
     }
   })
 
-  mainWindow.on('ready-to-show', () => {
-    mainWindow.show()
+  mainWindow.on('ready-to-show', async () => {
+    mainWindow.show();
+    await bootstrap();
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
@@ -68,7 +72,24 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
   }
-})
+});
 
-// In this file you can include the rest of your app"s specific main process
-// code. You can also put them in separate files and require them here.
+const APPDIR = path.join(app.getPath('appData'), app.getName());
+
+export { APPDIR };
+
+console.log(APPDIR)
+export const DATADIR = path.join(APPDIR, 'data');
+export const MODSDIRWRAPPER = path.join(DATADIR, 'mods');
+export const MODSDIR = path.join(MODSDIRWRAPPER, 'Mods');
+export const DISABLEDMODSDIR = path.join(MODSDIRWRAPPER, 'DisabledMods');
+export const CONFIGDIR = path.join(DATADIR, 'config');
+export const ZIPNAME = '3dmigoto';
+export const ZIPPATH = async (): Promise<string | undefined> => {
+  // Find 3dmigoto.zip
+  return (await findFile(ZIPNAME, ['zip'], 'resources'));
+}
+
+const bootstrap = async () => {
+  await setupProject(app)
+};

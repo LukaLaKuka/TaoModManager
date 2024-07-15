@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "An Electron application with Svelte and TypeScript",
   "main": "./out/main/index.js",
-  "author": "example.com",
+  "author": "LukaLaKuka",
   "homepage": "https://electron-vite.org",
   "scripts": {
     "format": "prettier --plugin prettier-plugin-svelte --write .",
@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.1",
-    "@electron-toolkit/utils": "^3.0.0"
+    "@electron-toolkit/utils": "^3.0.0",
+    "@tomhuel/jsonhandler": "^1.0.1",
+    "decompress": "^4.2.1"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^2.0.0",

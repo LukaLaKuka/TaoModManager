@@ -1,20 +1,28 @@
 <script>
   import Navbar from './components/navbar/Navbar.svelte'
+  import Modcard from './components/card/modcard.svelte'
+  import SettingsModal from './components/modal/settings/settingsModal.svelte'
+  import Import from './icons/import.svelte'
 
-  import Modcard from './components/card/modcard.svelte';
-  import SettingsModal from './components/modal/settings/settingsModal.svelte';
-  // Lógica
+  const getMods = () => {
+    return Array(10)
+  }
 
-  import Import from './icons/import.svelte';
+  const importCompress = (e) => {
+    console.log(e.target.files[0])
+  }
 
-  let mods = Array(10)
+  let mods = getMods()
 </script>
 
 <div class="h-screen">
   <Navbar />
   <main class="px-6 py-5 overflow-y-scroll">
     <div class="flex justify-between text-light-blue mb-8">
-      <Import />
+      <label for="import-input" class="cursor-pointer">
+        <Import />
+        <input type="file" accept=".zip,.rar" on:change={importCompress} id="import-input" hidden />
+      </label>
       <SettingsModal genshinPath="C:/Program_x86/App/Genshin/Executable/Path" />
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:gap-x-20 gap-8">

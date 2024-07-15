@@ -1,3 +1,5 @@
-export function descompress(args: any) {
-    console.log(args);
+import { APPDIR } from "../..";
+
+export async function descompress(_: any) {
+    return APPDIR;
 }

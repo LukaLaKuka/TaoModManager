@@ -1,5 +1,5 @@
-appId: com.electron.app
-productName: tao-mod-manager
+appId: com.github.taomodmanager
+productName: 'Tao Mod Manager'
 directories:
   buildResources: build
 files:
@@ -12,7 +12,8 @@ files:
 asarUnpack:
   - resources/**
 win:
-  executableName: tao-mod-manager
+  executableName: 'Tao Mod Manager'
+  requestedExecutionLevel: "requireAdministrator"
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
