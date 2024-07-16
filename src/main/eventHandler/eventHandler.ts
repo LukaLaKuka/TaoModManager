@@ -1,5 +1,4 @@
 import { ipcMain } from "electron";
-import { descompress } from "../app/mods/descompress";
 import { APPDIR } from "..";
 
 /**
@@ -14,6 +13,6 @@ export default function handleEvent() {
     });
     
     ipcMain.handle('descompress', async (_, args) => {
-        return (await descompress(args));
+        return args;
     });
 }

@@ -1,5 +1,5 @@
 import decompress from 'decompress'
-import { decompressedFile } from '../../interaces/decompressedFile'
+import { decompressedFile } from '../../interfaces/decompressedFile'
 import fs from 'node:fs'
 import path from 'node:path'
 
