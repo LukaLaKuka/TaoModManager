@@ -3,7 +3,7 @@ import { app, BrowserWindow, shell } from "electron";
 import path from "node:path";
 import icon from '../../../resources/icon.png?asset';
 import { bootstrap } from "..";
-import handleEvent from "../eventHandler/eventHandler";
+import handleEvent from "./events/eventHandler";
 
 export class TaoModManagerApp {
     static async start() {

@@ -1,5 +1,5 @@
 import { ipcMain } from "electron";
-import { APPDIR } from "..";
+import { APPDIR } from "../..";
 
 /**
  * Event Handler (IPC events emitted by front)
