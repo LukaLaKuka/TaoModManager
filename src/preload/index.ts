@@ -3,8 +3,7 @@ import { electronAPI } from '@electron-toolkit/preload'
 
 const names = [
   'hello',
-  'descompress',
-  'unable_mod'
+  'decompress',
 ];
 
 function invoke(names: string[]) {

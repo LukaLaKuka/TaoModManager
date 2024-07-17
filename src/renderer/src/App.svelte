@@ -8,8 +8,9 @@
     return Array(10)
   }
 
-  const importCompress = (e) => {
-    console.log(e.target.files[0])
+  const importCompress = async (e) => {
+    console.log(e.target.files[0].path)
+    await window.electron.decompress(e.target.files[0].path);
   }
 
   let mods = getMods()

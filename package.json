@@ -24,7 +24,8 @@
     "@electron-toolkit/preload": "^3.0.1",
     "@electron-toolkit/utils": "^3.0.0",
     "@tomhuel/jsonhandler": "^1.0.1",
-    "decompress": "^4.2.1"
+    "decompress": "^4.2.1",
+    "node-unrar-js": "^2.0.2"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^2.0.0",

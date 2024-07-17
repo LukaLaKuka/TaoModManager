@@ -4,6 +4,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 export async function decompressZip(zipFile: string, output: string) {
+  console.log(`Creating ${zipFile} at ${output}`);
   try {
     let files: decompressedFile[] = await decompress(zipFile);
     files.forEach(async (file: decompressedFile) => {
