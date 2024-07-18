@@ -22,7 +22,7 @@
     <div class="flex justify-between text-light-blue mb-8">
       <label for="import-input" class="cursor-pointer">
         <Import />
-        <input type="file" accept=".zip,.rar" on:change={importCompress} id="import-input" hidden />
+        <input type="file" accept=".zip,.rar" on:change={importCompress} id="import-input" hidden max="1" />
       </label>
       <SettingsModal genshinPath="C:/Program_x86/App/Genshin/Executable/Path" />
     </div>
