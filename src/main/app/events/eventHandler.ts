@@ -1,6 +1,6 @@
 import { ipcMain } from "electron";
 import { APPDIR } from "../..";
-import { decompressZipMod } from "../modules/mods/decompressMods";
+import { decompressRarMod, decompressZipMod } from "../modules/mods/decompressMods";
 
 /**
  * Event Handler (IPC events emitted by front)
@@ -19,7 +19,7 @@ export default function handleEvent() {
         console.log(ext);
         switch (ext) {
             case 'zip': decompressZipMod(userModPath); break;
-            case 'rar': break;
+            case 'rar': decompressRarMod(userModPath); break;
             default: return;
         }
     });
