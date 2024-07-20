@@ -2,14 +2,26 @@
     import ResetButton from "../../navbar/resetButton/resetButton.svelte";
     import Settings from "../../../icons/settings.svelte";
     import ModalTitle from "../default/modalTitle.svelte";
+    import { onMount } from "svelte";
 
-    export let genshinPath: string = "";
+    let genshinPath: string = '';
 
-    const setupSettings = (e: Event) => {
+    const setupSettings = async (e) => {
         e.preventDefault();
+        genshinPath = e.target.files[0].path;
+        await window.electron.setGenshinPath(genshinPath);
     };
 
+    const getGenshinPath = async () => {
+        genshinPath = await window.electron.getGenshinPath();
+    };
+
+    onMount(() => {
+        getGenshinPath();
+    });
+
     const fixModels = (e: Event) => {
+        e.preventDefault()
         console.log(`${e.target}`);
     };
 </script>
@@ -23,16 +35,17 @@
             >
             <div class="grid grid-cols-4 mt-1 gap-3">
                 <input
-                    id="genshinPath"
                     type="text"
-                    class="col-span-3 bg-gray rounded-input text-light p-1 focus-visible:outline-none font-abz"
+                    class="col-span-3 bg-gray rounded-input text-light p-1 focus-visible:outline-none font-abz overflow-x-scroll"
                     value={genshinPath}
-                    on:change={setupSettings}
+                    disabled
                 />
-                <button
-                    class="col-span-1 px-1 bg-primary text-light rounded-input font-abz"
-                    >Select...</button
-                >
+                <label
+                    class="col-span-1 px-1 bg-primary text-light rounded-input font-abz flex justify-center items-center hover:bg-primary-darker transition-all duration-500"
+                    for="selectGenshinPath"
+                    >Select...
+                </label>
+                <input type="file" class="hidden" id="selectGenshinPath" on:change={setupSettings}>
             </div>
         </form>
         <div>

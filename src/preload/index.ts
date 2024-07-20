@@ -2,8 +2,12 @@ import { contextBridge, ipcRenderer } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
 
 const names = [
-  'hello',
   'decompress',
+  'getGenshinPath',
+  'setGenshinPath',
+  'play',
+  'getMods',
+  'fixModels',
 ];
 
 function invoke(names: string[]) {

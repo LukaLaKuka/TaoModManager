@@ -1,6 +1,6 @@
 import { ipcMain } from "electron";
-import { APPDIR } from "../..";
 import { decompressRarMod, decompressZipMod } from "../modules/mods/decompressMods";
+import { getGenshinExecPath, setGenshinExecPath } from "../modules/mods/config";
 
 /**
  * Event Handler (IPC events emitted by front)
@@ -8,19 +8,33 @@ import { decompressRarMod, decompressZipMod } from "../modules/mods/decompressMo
  */
 export default function handleEvent() {
 
-    ipcMain.handle('hello', async (_, __) => {
-        console.log('Hello from back');
-        return APPDIR;
-    });
-    
     ipcMain.handle('decompress', async (_, args) => {
         let userModPath: string = args[0];
         let ext = userModPath.substring(userModPath.lastIndexOf('.') + 1);
-        console.log(ext);
         switch (ext) {
             case 'zip': decompressZipMod(userModPath); break;
             case 'rar': decompressRarMod(userModPath); break;
             default: return;
         }
+    });
+
+    ipcMain.handle('getGenshinPath', async (_, __) => {
+        return (await getGenshinExecPath());
+    });
+
+    ipcMain.handle('setGenshinPath', async (_, args) => {
+        await setGenshinExecPath(args[0]);
+    });
+
+    ipcMain.handle('play', async (_, __) => {
+
+    });
+
+    ipcMain.handle('getMods', async (_, __) => {
+
+    });
+
+    ipcMain.handle('fixModels', async (_, __) => {
+
     });
 }

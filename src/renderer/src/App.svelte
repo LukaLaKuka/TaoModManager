@@ -9,7 +9,6 @@
   }
 
   const importCompress = async (e) => {
-    console.log(e.target.files[0].path)
     await window.electron.decompress(e.target.files[0].path);
   }
 
@@ -24,7 +23,7 @@
         <Import />
         <input type="file" accept=".zip,.rar" on:change={importCompress} id="import-input" hidden max="1" />
       </label>
-      <SettingsModal genshinPath="C:/Program_x86/App/Genshin/Executable/Path" />
+      <SettingsModal/>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:gap-x-20 gap-8">
       {#each mods as mod, index}
