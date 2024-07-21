@@ -6,7 +6,7 @@ export async function extractRarArchive(file: string, destination: string) {
             filepath: file,
             targetPath: destination
         });
-        extractor.extract();
+        [...extractor.extract().files];
     } catch (err) {
         console.error(err);
     }
