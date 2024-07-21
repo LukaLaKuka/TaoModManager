@@ -10,7 +10,9 @@ const possiblePaths = [
     'C:\\Program Files (x86)\\miHoYo\\Genshin Impact',
     'C:\\Games\\Genshin Impact',
     'D:\\Games\\Genshin Impact',
+    'C:\\Genshin Impact\\Genshin Impact game',
     'D:\\Genshin Impact game',
+    'C:\\Genshin Impact game',
     'E:\\Games\\Genshin Impact',
 ];
 const executableName = 'GenshinImpact.exe';

@@ -1,6 +1,7 @@
 import { ipcMain } from "electron";
 import { decompressRarMod, decompressZipMod } from "../modules/mods/decompressMods";
 import { getGenshinExecPath, setGenshinExecPath } from "../modules/mods/config";
+import { startGame } from "../modules/cmd/startGame";
 
 /**
  * Event Handler (IPC events emitted by front)
@@ -27,7 +28,7 @@ export default function handleEvent() {
     });
 
     ipcMain.handle('play', async (_, __) => {
-
+        await startGame()
     });
 
     ipcMain.handle('getMods', async (_, __) => {
