@@ -2,7 +2,6 @@ import { execFile, spawn } from "child_process";
 import path from "path";
 
 export async function execute(execPath) {
-
     const dir = path.dirname(execPath);
     const filename = path.basename(execPath);
 

@@ -12,7 +12,7 @@
         document.body.style.overflow = "hidden";
         displayModal = true;
     }}
-    class={buttonClassname}><slot name="buttonContent" /></button
+    class={buttonClassname} title={title}><slot name="buttonContent" /></button
 >
 <!-- Modal Body -->
 <div

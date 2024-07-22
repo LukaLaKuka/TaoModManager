@@ -8,6 +8,9 @@ const names = [
   'play',
   'getMods',
   'fixModels',
+  'enableMod',
+  'disableMod',
+  'openDir'
 ];
 
 function invoke(names: string[]) {

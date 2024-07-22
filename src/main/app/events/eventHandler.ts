@@ -2,6 +2,8 @@ import { ipcMain } from "electron";
 import { decompressRarMod, decompressZipMod } from "../modules/mods/decompressMods";
 import { getGenshinExecPath, setGenshinExecPath } from "../modules/mods/config";
 import { startGame } from "../modules/cmd/startGame";
+import { ModRepository } from "../modules/mods/modRepository";
+import { openDir } from "../modules/fs/openDir";
 
 /**
  * Event Handler (IPC events emitted by front)
@@ -32,10 +34,25 @@ export default function handleEvent() {
     });
 
     ipcMain.handle('getMods', async (_, __) => {
-
+        let MR = new ModRepository();
+        return await MR.get();
     });
 
     ipcMain.handle('fixModels', async (_, __) => {
 
+    });
+
+    ipcMain.handle('enableMod', async (_, args) => {
+        console.log(args);
+        
+    });
+
+    ipcMain.handle('disableMod', async (_, args) => {
+        console.log(args);
+        
+    });
+
+    ipcMain.handle('openDir', async (_, args) => {
+        openDir(args[0]);
     });
 }

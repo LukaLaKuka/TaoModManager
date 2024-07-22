@@ -4,11 +4,12 @@
     export let active: boolean;
 </script>
 
-
-<label class="switch min-w-min" for={id}>
-    <input type="checkbox" id="{id}" bind:checked={active} />
-    <div class="slider round"></div>
-</label>
+<div class="min-w-min">
+    <label class="switch" for={id}>
+        <input type="checkbox" id="{id}" bind:checked={active} />
+        <div class="slider round"></div>
+    </label>
+</div>
 
 
 <style>
