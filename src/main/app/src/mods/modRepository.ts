@@ -1,6 +1,6 @@
 import { JsonHandler } from '@tomhuel/jsonhandler';
-import { CONFIGDIR } from '../../config/paths';
 import path from 'node:path';
+import { CONFIGDIR } from '../../../config/paths';
 import { Mod, ModStatus } from '../../entities/Mod';
 
 export class ModRepository {

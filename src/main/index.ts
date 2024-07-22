@@ -1,6 +1,6 @@
 import { TaoModManagerApp } from "./app/app";
-import { APPDIR } from "./app/config/paths";
-import { setupProject } from "./app/setup/setupDirs";
+import { APPDIR } from "./config/paths";
+import { setupProject } from "./setup/setupDirs";
 import { app } from "electron";
 
 export const bootstrap = async () => {

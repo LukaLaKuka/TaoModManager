@@ -1,5 +1,5 @@
 import decompress from 'decompress'
-import { decompressedFile } from '../../entities/decompressedFile'
+import { decompressedFile } from '../../app/entities/decompressedFile'
 import fs from 'node:fs'
 import path from 'node:path'
 
@@ -18,8 +18,8 @@ export async function decompressZip(zipFile: string, output: string) {
       if (!fs.existsSync(parentDir)) fs.mkdirSync(parentDir);
 
       if (file.type === 'file') {
-        await fs.writeFileSync(outputPath, file.data);
-        await fs.chmodSync(outputPath, file.mode);
+        fs.writeFileSync(outputPath, file.data);
+        fs.chmodSync(outputPath, file.mode);
         await fs.utimesSync(outputPath, new Date(), file.mtime);
       }
     });

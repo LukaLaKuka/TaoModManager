@@ -1,9 +1,10 @@
 import { ipcMain } from "electron";
-import { decompressRarMod, decompressZipMod } from "../modules/mods/decompressMods";
-import { getGenshinExecPath, setGenshinExecPath } from "../modules/mods/config";
-import { startGame } from "../modules/cmd/startGame";
-import { ModRepository } from "../modules/mods/modRepository";
+import { startGame } from "../app/src/game/startGame";
 import { openDir } from "../modules/fs/openDir";
+import { decompressRarMod, decompressZipMod } from "../app/src/mods/decompressMods";
+import { getGenshinExecPath, setGenshinExecPath } from "../app/src/mods/config";
+import { ModRepository } from "../app/src/mods/modRepository";
+
 
 /**
  * Event Handler (IPC events emitted by front)

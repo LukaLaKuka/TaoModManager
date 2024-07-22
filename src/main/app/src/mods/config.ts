@@ -1,6 +1,6 @@
 import path from "node:path";
 import fs from 'node:fs';
-import { getConfig, setConfig } from "../fs/jsonHandler";
+import { getConfig, setConfig } from "../../../modules/fs/jsonHandler";
 
 const genshinKey = 'genshin_path';
 const possiblePaths = [

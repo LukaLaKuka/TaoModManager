@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { APPDIR } from '../../..';
+import { APPDIR } from '../..';
 
 export async function findFile(filename: string, extensions: string[], rootPath: string | undefined = undefined): Promise<string | undefined> {
     rootPath = rootPath ?? APPDIR;

@@ -1,10 +1,10 @@
 import path from 'path';
 import fs from 'node:fs';
-import { MODSDIR } from '../../config/paths';
-import { decompressZip } from '../decompress/zip';
-import { extractRarArchive } from '../decompress/unrar';
-import { Mod, ModStatus } from '../../entities/Mod';
+import { decompressZip } from '../../../modules/decompress/zip';
+import { extractRarArchive } from '../../../modules/decompress/unrar';
 import { ModRepository } from './modRepository';
+import { Mod, ModStatus } from '../../entities/Mod';
+import { MODSDIR } from '../../../config/paths';
 
 export async function decompressZipMod(zipPath: string) {
     let outputDir = createDefaultModDir(zipPath);
