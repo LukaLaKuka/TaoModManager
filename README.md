@@ -1,34 +1,30 @@
-# tao-mod-manager
+# Tao Mod Manager
 
-An Electron application with Svelte and TypeScript
+<div align='center'>
 
-## Recommended IDE Setup
+![Tao Mod Manager Icon](/build/icon.png)
 
-- [VSCode](https://code.visualstudio.com/) + [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) + [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode)
+</div>
 
-## Project Setup
+Tao Mod Manager is a Desktop App to manage easily Models in Genshin Impact.
 
-### Install
+This desktop app uses [GI-Model-Importer](https://github.com/SilentNightSound/GI-Model-Importer) underground.
 
-```bash
-$ npm install
-```
+Coming soon website & User's guide...
 
-### Development
 
-```bash
-$ npm run dev
-```
+## Authors
 
-### Build
+Design:
+- [LukaLaKuka](https://github.com/LukaLaKuka)
+- [dmf347](https://github.com/dmf347)
 
-```bash
-# For windows
-$ npm run build:win
+UX:
+- [LukaLaKuka](https://github.com/LukaLaKuka)
+- [dmf347](https://github.com/dmf347)
 
-# For macOS
-$ npm run build:mac
+Coding:
+- [LukaLaKuka](https://github.com/LukaLaKuka)
 
-# For Linux
-$ npm run build:linux
-```
+Loader:
+- [GI-Model-Importer](https://github.com/SilentNightSound/GI-Model-Importer) by [SilentNightSoind](https://github.com/SilentNightSound)
