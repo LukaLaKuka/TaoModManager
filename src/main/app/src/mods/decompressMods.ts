@@ -5,17 +5,18 @@ import { extractRarArchive } from '../../../modules/decompress/unrar';
 import { ModRepository } from './modRepository';
 import { Mod, ModStatus } from '../../entities/Mod';
 import { MODSDIR } from '../../../config/paths';
+import { rmRecursive } from '../../../modules/fs/rmRecursive';
 
 export async function decompressZipMod(zipPath: string) {
     let outputDir = createDefaultModDir(zipPath);
-    await decompressZip(zipPath, outputDir);
     addMod(zipPath, outputDir);
+    await decompressZip(zipPath, outputDir);
 }
 
 export async function decompressRarMod(zipPath: string) {
     let outputDir = createDefaultModDir(zipPath);
-    await extractRarArchive(zipPath, outputDir);
     addMod(zipPath, outputDir);
+    await extractRarArchive(zipPath, outputDir);
 }
 
 async function addMod(zipPath, outputDir) {
@@ -37,10 +38,7 @@ async function addMod(zipPath, outputDir) {
 function createDefaultModDir(zipPath: string) {
     let zipName = path.basename(zipPath, path.extname(zipPath));
     let outputDir = path.join(MODSDIR, zipName);
-    if (fs.existsSync(outputDir)) fs.rmSync(outputDir, {
-        recursive: true,
-        force: true,
-    });
+    if (fs.existsSync(outputDir)) rmRecursive(outputDir);
     fs.mkdirSync(outputDir);
     return outputDir;
 }

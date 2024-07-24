@@ -10,7 +10,9 @@ const names = [
   'fixModels',
   'enableMod',
   'disableMod',
-  'openDir'
+  'openDir',
+  'deleteMod',
+  'setModName',
 ];
 
 function invoke(names: string[]) {

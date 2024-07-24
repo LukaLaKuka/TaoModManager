@@ -1,12 +1,21 @@
 
 <script lang="ts">
+  import { createEventDispatcher } from "svelte";
+
     export let id: string;
     export let active: boolean;
+
+    const dispatch = createEventDispatcher();
+
+    const changeStatus = () => {
+        if (active) dispatch('enable');
+        if (!active) dispatch('disable');
+    }
 </script>
 
 <div class="min-w-min">
     <label class="switch" for={id}>
-        <input type="checkbox" id="{id}" bind:checked={active} />
+        <input type="checkbox" id="{id}" bind:checked={active} on:change={changeStatus}/>
         <div class="slider round"></div>
     </label>
 </div>

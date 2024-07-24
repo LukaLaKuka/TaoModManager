@@ -12,10 +12,7 @@
 
   const importCompress = async (e) => {
     await window.electron.decompress(e.target.files[0].path);
-    console.log(`Updating ...`);
-    setTimeout(async () => {
-      await getMods();
-    }, 600);
+    await getMods();
   };
 
   let mods = [];
@@ -56,6 +53,7 @@
           active={mod.status === 'ENABLED'}
           realModName={mod.realname}
           path={mod.path}
+          on:reload={getMods}
         />
       {/each}
     </div>

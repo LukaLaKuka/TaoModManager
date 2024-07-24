@@ -3,5 +3,5 @@ export interface decompressedFile {
     mtime: Date;
     path: string;
     type: 'file' | 'directory';
-    data: Buffer;
+    data: any;
 }

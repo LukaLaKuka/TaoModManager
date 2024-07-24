@@ -4,6 +4,12 @@ import { openDir } from "../modules/fs/openDir";
 import { decompressRarMod, decompressZipMod } from "../app/src/mods/decompressMods";
 import { getGenshinExecPath, setGenshinExecPath } from "../app/src/mods/config";
 import { ModRepository } from "../app/src/mods/modRepository";
+import { execute } from "../modules/cmd/execute";
+import { MODELFIXEREXECUTABLE } from "../config/paths";
+import { deleteMod } from "../app/src/mods/deleteMod";
+import { disableMod } from "../app/src/mods/disableMod";
+import { enableMod } from "../app/src/mods/enableMod";
+import { setModName } from "../app/src/mods/setModName";
 
 
 /**
@@ -40,20 +46,28 @@ export default function handleEvent() {
     });
 
     ipcMain.handle('fixModels', async (_, __) => {
-
+        await execute(MODELFIXEREXECUTABLE);
     });
 
     ipcMain.handle('enableMod', async (_, args) => {
-        console.log(args);
-        
+        enableMod(args[0]);
+
     });
 
     ipcMain.handle('disableMod', async (_, args) => {
-        console.log(args);
-        
+        disableMod(args[0]);
+
     });
 
     ipcMain.handle('openDir', async (_, args) => {
         openDir(args[0]);
+    });
+
+    ipcMain.handle('deleteMod', async (_, args) => {
+        await deleteMod(args[0]);
+    });
+
+    ipcMain.handle('setModName', async (_, args) => {
+        await setModName(args[0], args[1]);
     });
 }

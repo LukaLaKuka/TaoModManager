@@ -37,6 +37,7 @@ export class ModRepository {
         let mods = await this.get();
         let modIndex = await this.indexOfRealname(realname);
         mods[modIndex] = mod;
+        this.jsonhandler.setProperty(ModRepository.jsonKey, mods);
     }
 
     async enableMod(realname: string) {
@@ -53,7 +54,7 @@ export class ModRepository {
         this.update(realname, mod);
     }
 
-    private async findByRealname(realname: string): Promise<Mod> {
+    public async findByRealname(realname: string): Promise<Mod> {
         let mods = await this.get();
         let mod = mods.find((mod) => {
             return mod.realname === realname;
