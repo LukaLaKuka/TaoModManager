@@ -2,7 +2,7 @@ MIT License
 
 **DISCLAIMER: Strongly recommended only using private servers for modding. Using these tools on official Genshin servers carries a high risk of being banned. I do not condone the use of these tools and programs on official servers, and take no responsibility for any consequences as a result if you do.**
 
-Copyright (c) 2024 LukaLaKuka
+Copyright (c) 2024 Tomás Nahuel Antela Rizzo
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
